@@ -24,6 +24,14 @@ void loop()
   else
   {
     digitalWrite(led,HIGH);
-    digitalWrite(buzzer,HIGH);
+    int i=0;
+    do{
+      i++;
+      tone(buzzer,900);
+      delay(200);
+      noTone(buzzer);
+      delay(200);
+    }while(i<2);
+    delay(1000);
   }
 }
