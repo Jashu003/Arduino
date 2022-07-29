@@ -1,0 +1,29 @@
+int sensor=9;
+int led=10;
+int buzzer=11;
+
+void setup()
+{
+  pinMode(sensor,INPUT);
+  pinMode(led,OUTPUT);
+  pinMode(buzzer,OUTPUT);
+  Serial.begin(2);
+  
+}
+
+void loop()
+{
+  int statusSensor=digitalRead(sensor);
+  Serial.print(statusSensor);
+
+  if (statusSensor==1)
+  {
+    digitalWrite(led,LOW);
+    digitalWrite(buzzer,LOW);
+  }
+  else
+  {
+    digitalWrite(led,HIGH);
+    digitalWrite(buzzer,HIGH);
+  }
+}
